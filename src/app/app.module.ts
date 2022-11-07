@@ -14,6 +14,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatDividerModule} from "@angular/material/divider";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import { CharactersComponent } from './components/characters/characters.component';
+import { CharactersDetailsComponent } from './components/characters-details/characters-details.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CharactersComponent } from './components/characters/characters.componen
     MainLayoutComponent,
     EpisodesComponent,
     EpisodeComponent,
-    CharactersComponent
+    CharactersComponent,
+    CharactersDetailsComponent
   ],
   imports: [
     BrowserModule,

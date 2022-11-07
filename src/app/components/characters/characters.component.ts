@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute} from "@angular/router";
-import {urls} from "../../configs";
+
+import {IEpisode} from "../../interfaces";
+import {MainService} from "../../services";
 
 @Component({
   selector: 'app-characters',
@@ -9,13 +10,13 @@ import {urls} from "../../configs";
   styleUrls: ['./characters.component.css']
 })
 export class CharactersComponent implements OnInit {
+  selectedEpisode:IEpisode;
 
-
-  constructor(private httpClient:HttpClient,private activatedRoute:ActivatedRoute) { }
+  constructor(private mainService:MainService,private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(({id}) => {
-      this.httpClient.get(urls.epidose(id)).subscribe(value => console.log(value))
+      this.mainService.getEpisode(id).subscribe((value) => this.selectedEpisode = value)
     })
   }
 

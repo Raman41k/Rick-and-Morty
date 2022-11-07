@@ -1,1 +1,5 @@
-<p>characters works!</p>
+<h2 class="title">Characters:</h2>
+<div class="wrapper">
+  <app-characters-details *ngFor="let char of selectedEpisode?.characters" [urls]="char"></app-characters-details>
+</div>
+

@@ -1,0 +1,14 @@
+<div class="pagination">
+  <mat-paginator
+    [length]="total_count"
+    [pageSize]="20"
+    aria-label="Select page">
+  </mat-paginator>
+</div>
+
+
+<div class="wrapper">
+  <app-episode *ngFor="let episode of episodes" [episode]="episode"></app-episode>
+</div>
+
+
